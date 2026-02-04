@@ -1,17 +1,15 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-
-import Begena from "./components/Begena.jsx";
-
-function App() {
+import { Routes, Route } from "react-router-dom";
+import Home from "./pages/Home.jsx";
+import Modes from "./pages/Modes";
+import Play from "./pages/Play";
+import './App.css';
+export default function App() {
   return (
-    <div style={{ textAlign: "center", marginTop: "40px" }}>
-      <h1>Begena App</h1>
-      <Begena />
-    </div>
-  );
+    <div className= "app-container">
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/modes" element={<Modes />} />
+      <Route path="/play/:modeId" element={<Play />} />
+    </Routes>
+ </div> );
 }
-
-export default App;
